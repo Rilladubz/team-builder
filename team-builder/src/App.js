@@ -1,13 +1,19 @@
 import React, { useState } from 'react';
 import Form from './Components/Form/Form';
+import MembersCard from './Components/MemberCard/MembersCard';
 import './App.css';
 
 function App() {
-  const [teamMember, setTeamMember] = useState();
+  const [teamMembersList, setTeamMembersList] = useState([]);
+
+  const addNewTeamMember = teamMember => {
+    setTeamMembersList([...teamMembersList, teamMember])
+  }
 
   return (
     <div className="App">
-     <Form teamMemberList={teamMember}/>
+     <Form newTeamMemberprops={addNewTeamMember}/>
+     <MembersCard teamMembers={teamMembersList}/>
     </div>
   );
 }
