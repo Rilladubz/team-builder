@@ -7,6 +7,7 @@ import './App.css';
 const StyleDiv = styled.div`
   background-color: black;
   text-align: center;
+  margin: 1rem;
 `;
 
 const StyledH1 = styled.h1`
@@ -23,8 +24,13 @@ function App() {
   return (
     <StyleDiv>
     <StyledH1>Team Builder</StyledH1>
-      <Form newTeamMemberprops={addNewTeamMember}/>
-      <MembersCard teamMembers={teamMembersList}/>
+      
+        <Form newTeamMemberprops={addNewTeamMember}/>
+
+      <StyleDiv>
+        <MembersCard teamMembers={teamMembersList}/>
+      </StyleDiv>
+        
     </StyleDiv>
   );
 }
